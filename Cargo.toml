@@ -3,4 +3,15 @@ name = "jamseq-clap"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
+jamseq-plugin-api = { path = "../jamseq-plugin-api" }
+clack-host = "0.2.0"
+clack-extensions = { version = "0.2.0", features = ["clack-host", "params", "timer", "posix-fd", "note-name"] }
+clack-common = "0.2.0"
+clap-sys = "0.5.0"
+
+[dev-dependencies]
+libloading = "0.8"
